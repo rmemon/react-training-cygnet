@@ -74,7 +74,7 @@ class ToDo extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <h3>ToDo:</h3>
         <ul>
           {this.state.todos.map((todo, index) => {
@@ -89,7 +89,7 @@ class ToDo extends React.Component {
           />
           <button> Add </button>
         </form>
-      </>
+      </div>
     );
   }
 }

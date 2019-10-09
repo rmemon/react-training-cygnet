@@ -8,6 +8,9 @@ class ToDo extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.props.dispatch({ type: "GET_TODOS" })
+  }
   handleChange(event) {
     let value = event.target.value;
     this.props.dispatch({ type: "INPUT_CHANGE", text: value });
@@ -24,9 +27,10 @@ class ToDo extends React.Component {
         <h3>ToDo:</h3>
         <ul>
           {this.props.todos.map((todo, index) => {
-            return <li key={index}> {todo} </li>;
+            return <li key={index}> {todo.title} </li>;
           })}
         </ul>
+        {this.props.requesting && <h5>Loading....</h5>}
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -45,6 +49,7 @@ const mapStateToProps = state => {
   return {
     todos: state.todos,
     text: state.text,
+    requesting: state.requesting,
   }
 }
 export default connect(mapStateToProps)(ToDo);

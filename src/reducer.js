@@ -13,11 +13,16 @@ export default (state = { todos: [], text: '', seconds: 0 }, action) => {
                 text: action.text
             }
             break;
-            case 'UPDATE_SECONDS':
-                return {
-                    ...state,
-                    seconds: state.seconds +1
-                }
+        case 'UPDATE_SECONDS':
+            return {
+                ...state,
+                seconds: state.seconds + 1
+            }
+        default:
+            return {
+                ...state,
+
+            }
     }
     return state;
 }

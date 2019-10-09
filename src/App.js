@@ -5,42 +5,29 @@ import ToDo from './ToDo';
 import Seconds from './Seconds';
 
 class App extends Component {
-  constructor(props)
-  {
-    super(props);
 
-    this.state = { todos: ['one'] }
 
-    this.addToDo =this.addToDo.bind(this);
-  }
-
-  addToDo(value)
-  {
-    this.setState({
-      todos: this.state.todos.concat(value)
-    })
-  }
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
         </a>
-        <Seconds />
-        <ToDo  addToDo={this.addToDo} />
-        <ToDo  addToDo={this.addToDo} />
-      </header>
-    </div>
+          <Seconds />
+          <ToDo />
+          <ToDo />
+        </header>
+      </div>
     );
   }
 }
